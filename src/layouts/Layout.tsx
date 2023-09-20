@@ -1,5 +1,6 @@
 import { Box, Container } from "@chakra-ui/react";
 import Canvas from "../components/common/Canvas";
+import { responsiveText } from "../styles/responsive";
 
 interface LayoutProps {
   backgroundColor: string;
@@ -42,8 +43,10 @@ export default function Layout({
       <Container
         position="relative"
         maxW="container.xl"
-        px={["2rem", "2rem", "2rem", 0]}
+        px={["2rem", "2rem", "2rem", "1rem"]}
         wordBreak="keep-all"
+        fontSize={responsiveText.ContentsText}
+        style={canvas ? { pointerEvents: "none" } : {}}
       >
         {children}
       </Container>

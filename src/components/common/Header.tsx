@@ -18,14 +18,7 @@ interface Props {
   isOpen: boolean;
 }
 
-const Links = [
-  "About Me",
-  "Skills",
-  "Archive",
-  "Projects",
-  "Career",
-  "Contact",
-];
+const Links = ["About", "Skills", "Projects", "Career", "Contact"];
 
 const styles = {
   navLink: (scrolled: boolean, isOpen: boolean) => ({
@@ -144,7 +137,7 @@ export default function Header() {
                 {Links.map((link) => (
                   <NavLink
                     key={link}
-                    to={link.toLowerCase().replace(/ /g, "-")}
+                    to={link.toLowerCase()}
                     scrolled={scrolled}
                     isOpen={isOpen}
                   >

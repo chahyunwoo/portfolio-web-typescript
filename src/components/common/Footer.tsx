@@ -5,7 +5,7 @@ import { FiMail } from "react-icons/fi";
 export default function Footer() {
   return (
     <>
-      <Box width="100%" backgroundColor="#222222" as="footer">
+      <Box width="100%" backgroundColor="#1b242f" as="footer">
         <Container maxW="container.xl">
           <Box width="100%" textAlign={"center"} py={16}>
             <Link href="https://github.com/chahyunwoo" isExternal>

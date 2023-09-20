@@ -2,8 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
-import AboutMe from "./pages/AboutMe";
-import Archive from "./pages/Archive";
+import About from "./pages/About";
 import Career from "./pages/Career";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
@@ -35,9 +34,8 @@ function App() {
       <div className="App" id="top">
         <Header />
         <Main />
-        <AboutMe />
+        <About />
         <Skills />
-        <Archive />
         <Projects />
         <Career />
         <Contact />

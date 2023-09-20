@@ -1,5 +1,6 @@
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
 import { Box } from "@chakra-ui/react";
+import theme from "../../styles/theme";
 
 interface LineType {
   angle: number;
@@ -13,8 +14,8 @@ interface LineType {
 }
 
 const BREAKPOINTS = {
-  MOBILE: 480,
-  TABLET: 768,
+  MOBILE: parseInt(theme.breakpoints.sm),
+  TABLET: parseInt(theme.breakpoints.md),
 };
 
 const determineNumLines = (windowWidth: number): number => {
@@ -133,18 +134,16 @@ export default function Canvas() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.addEventListener("mousemove", (event) => {
+    const handleMouseMove = (event: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       const mouseX = (event.clientX - rect.left) * 2;
       const mouseY = (event.clientY - rect.top) * 2;
       localLines.forEach((line) => {
-        if (isLineHovered(line, mouseX, mouseY)) {
-          line.hovered = true;
-        } else {
-          line.hovered = false;
-        }
+        line.hovered = isLineHovered(line, mouseX, mouseY);
       });
-    });
+    };
+
+    canvas.addEventListener("mousemove", handleMouseMove);
 
     canvas.width = dimensions.width * 2;
     canvas.height = dimensions.height * 2;
@@ -190,6 +189,10 @@ export default function Canvas() {
     };
 
     draw();
+
+    return () => {
+      canvas.removeEventListener("mousemove", handleMouseMove);
+    };
   }, [dimensions]);
 
   return (

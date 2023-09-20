@@ -1,32 +1,11 @@
 import Layout from "../layouts/Layout";
-import mainBackground from "../assets/images/background.mp4";
-import { Box, Flex, Heading, Text, VStack, Button } from "@chakra-ui/react";
-
-import "@fontsource/black-han-sans";
-import "@fontsource/ibm-plex-sans-kr";
+import { Box, Flex, Text, VStack, Button } from "@chakra-ui/react";
 
 import { responsiveText, responsiveSpacing } from "../styles/responsive";
 
 import { FaArrowDown } from "react-icons/fa";
 
 import { Link } from "react-scroll";
-
-interface HeadingProp {
-  children: React.ReactNode;
-}
-
-const StyledHeading = ({ children }: HeadingProp) => {
-  return (
-    <Heading
-      as="h1"
-      size={responsiveText.Heading}
-      fontWeight="normal"
-      textAlign="center"
-    >
-      {children}
-    </Heading>
-  );
-};
 
 export default function Main() {
   return (
@@ -73,7 +52,13 @@ export default function Main() {
             </Text>
           </VStack>
           <Box textAlign={"center"} marginTop={10}>
-            <Link to="about-me" smooth={true} duration={500} offset={-72}>
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              offset={-72}
+              style={{ pointerEvents: "auto" }}
+            >
               <Button
                 rightIcon={<FaArrowDown />}
                 variant="solid"

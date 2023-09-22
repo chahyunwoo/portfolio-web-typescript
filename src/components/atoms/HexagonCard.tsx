@@ -5,7 +5,6 @@ import { ReactNode, SVGProps } from "react";
 
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import useMobileCheck from "../../hooks/useMobileCheck";
 
 interface Props {
   icon: React.ReactElement<SVGProps<SVGSVGElement>>;
@@ -48,17 +47,16 @@ const spinIn = (delay: number) => ({
   },
 });
 
-export default function AboutCard({ icon, children, delay }: Props) {
+export default function HexagonCard({ icon, children, delay }: Props) {
   const { animation, ref } = useScrollAnimation();
-  const isMobile = useMobileCheck();
 
   return (
     <Flex wrap="wrap" justifyContent={"center"} textAlign="center">
       <Hexagon
         as={motion.div}
         ref={ref}
-        initial={isMobile ? "visible" : "hidden"}
-        animate={isMobile ? "visible" : animation}
+        initial={"hidden"}
+        animate={animation}
         variants={spinIn(delay)}
       >
         {icon}

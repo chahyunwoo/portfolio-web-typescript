@@ -66,7 +66,7 @@ export default function Canvas() {
       const orbitRadius =
         minOrbitRadius + Math.random() * (maxOrbitRadius - minOrbitRadius);
       const length =
-        minLineLength + Math.random() * (maxLineLength - minLineLength); // 길이를 랜덤하게 선택합니다.
+        minLineLength + Math.random() * (maxLineLength - minLineLength);
       const dotColor = colors[Math.floor(Math.random() * colors.length)];
       const speed = 0.0005 + Math.random() * 0.0001;
 

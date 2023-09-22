@@ -11,6 +11,8 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-scroll";
 import { useEffect, useState } from "react";
 
+import "../../assets/css/styles.css";
+
 interface Props {
   children: React.ReactNode;
   to: string;
@@ -56,6 +58,7 @@ const styles = {
     py: 4,
     px: 4,
     transition: "opacity 0.5s, visibility 0.5s",
+    borderBottom: "1px solid gray",
   },
 };
 
@@ -70,6 +73,7 @@ const NavLink = ({ children, to, scrolled, isOpen }: Props) => {
         to={to}
         smooth={true}
         duration={500}
+        spy={true}
         activeClass="active"
         offset={-72}
       >

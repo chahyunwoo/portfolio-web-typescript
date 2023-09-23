@@ -1,6 +1,6 @@
 import { HStack, Text, VStack } from "@chakra-ui/react";
 import { Gi3DHammer } from "react-icons/gi";
-import { AboutTitle } from "../styles/about";
+import { AboutTitle } from "../styles/aboutStyles";
 import { responsiveText } from "../styles/responsive";
 
 export default function KeyworldBox() {

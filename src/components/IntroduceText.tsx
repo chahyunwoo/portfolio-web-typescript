@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { AboutDesc, AboutTitleBorderBottom } from "../styles/about";
+import { AboutDesc, AboutTitleBorderBottom } from "../styles/aboutStyles";
 
 interface Props {
   titleName: string;

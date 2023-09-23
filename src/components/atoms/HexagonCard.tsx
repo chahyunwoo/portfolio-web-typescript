@@ -48,13 +48,13 @@ const spinIn = (delay: number) => ({
 });
 
 export default function HexagonCard({ icon, children, delay }: Props) {
-  const { animation, ref } = useScrollAnimation();
+  const { animation, animationRef } = useScrollAnimation();
 
   return (
     <Flex wrap="wrap" justifyContent={"center"} textAlign="center">
       <Hexagon
         as={motion.div}
-        ref={ref}
+        ref={animationRef}
         initial={"hidden"}
         animate={animation}
         variants={spinIn(delay)}

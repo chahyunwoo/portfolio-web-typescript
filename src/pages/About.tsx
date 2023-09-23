@@ -49,7 +49,7 @@ const cardData = [
 
 export default function About() {
   return (
-    <Layout backgroundColor="white" id="about" flexCenter>
+    <Layout backgroundColor="#eee" id="about" flexCenter>
       <SectionTitle direction="left">ABOUT</SectionTitle>
       <Box marginTop="4em">
         <Flex

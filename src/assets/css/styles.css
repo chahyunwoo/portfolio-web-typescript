@@ -2,3 +2,166 @@
   color: #de372a;
   transition: all 0.5s;
 }
+
+.bg-html {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-css {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-javascript {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-jquery {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-react {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-typescript {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-nextjs {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-vuejs {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-angular {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+
+.bg-redux {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-sass {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-bootstrap {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-mui {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-tailwind {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-reactnative {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-flutter {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-androidstudio {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-xcode {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-figma {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-storybook {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-jira {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-slack {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+.bg-git {
+  background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}

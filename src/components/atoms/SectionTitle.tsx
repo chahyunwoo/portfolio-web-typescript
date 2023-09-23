@@ -7,6 +7,7 @@ import useMobileCheck from "../../hooks/useMobileCheck";
 interface Props {
   children: React.ReactNode;
   direction: "left" | "right";
+  absolute?: boolean;
 }
 
 const slideIn = (direction: "left" | "right") => ({
@@ -18,11 +19,29 @@ const slideIn = (direction: "left" | "right") => ({
   },
 });
 
-export default function SectionTitle({ children, direction }: Props) {
+export default function SectionTitle({ children, direction, absolute }: Props) {
   const isMobile = useMobileCheck();
 
   return (
-    <VStack gap={0} fontSize={responsiveText.Heading}>
+    <VStack
+      gap={0}
+      fontSize={responsiveText.Heading}
+      sx={{
+        position: { base: "initial", lg: absolute ? "absolute" : "initial" },
+        top: { base: "unset", lg: absolute ? "0" : "unset" },
+        left: { base: "unset", lg: absolute ? "50%" : "unset" },
+        transform: {
+          base: "unset",
+          lg: absolute ? "translate(-50%, 0%)" : "unset",
+        },
+        "@media (max-height: 1079px)": {
+          position: "initial",
+          top: "unset",
+          left: "unset",
+          transform: "unset",
+        },
+      }}
+    >
       <Heading
         as={motion.h1}
         initial={isMobile ? "visible" : "hidden"}

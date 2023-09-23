@@ -1,7 +1,7 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { motion } from "framer-motion";
 import { responsiveText } from "../styles/responsive";
-import { AboutTitle, AboutDesc } from "../styles/about";
+import { AboutTitle, AboutDesc } from "../styles/aboutStyles";
 import styled from "@emotion/styled";
 
 const ResponsiveAboutDesc = styled(AboutDesc)`
@@ -24,11 +24,11 @@ const fadeIn = (delay: number) => ({
 });
 
 export default function CardContents({ title, desc, delay }: Props) {
-  const { animation, ref } = useScrollAnimation();
+  const { animation, animationRef } = useScrollAnimation();
 
   return (
     <motion.div
-      ref={ref}
+      ref={animationRef}
       initial="hidden"
       animate={animation}
       variants={fadeIn(delay)}

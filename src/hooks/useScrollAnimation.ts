@@ -6,13 +6,13 @@ import throttle from "lodash/throttle";
 
 export const useScrollAnimation = () => {
   const controls = useAnimation();
-  const ref = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<HTMLDivElement | null>(null);
   const [animationState, setAnimationState] = useState<string>("hidden");
 
   useEffect(() => {
     const handleScroll = throttle(() => {
-      if (ref.current) {
-        const rect = ref.current.getBoundingClientRect();
+      if (animationRef.current) {
+        const rect = animationRef.current.getBoundingClientRect();
         const offset =
           (window.innerHeight || document.documentElement.clientHeight) * 0.8;
         if (
@@ -32,5 +32,5 @@ export const useScrollAnimation = () => {
     };
   }, [controls, animationState]);
 
-  return { animation: controls, ref };
+  return { animation: controls, animationRef };
 };

@@ -106,7 +106,7 @@ export default function Header() {
         height="4.5rem"
         borderBottom={scrolled || isOpen ? "1px solid gray" : "none"}
         transition="all 0.5s"
-        zIndex="1"
+        zIndex="100"
       >
         <Container maxW="container.xl">
           <Flex

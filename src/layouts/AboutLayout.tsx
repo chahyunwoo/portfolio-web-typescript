@@ -14,13 +14,13 @@ const slideIn = (direction: string) => ({
 });
 
 export default function AboutLayout({ children, className }: Props) {
-  const { animation, ref } = useScrollAnimation();
+  const { animation, animationRef } = useScrollAnimation();
 
   return (
     <Box
       className={`about-${className}`}
       as={motion.div}
-      ref={ref}
+      ref={animationRef}
       initial="hidden"
       animate={animation}
       variants={slideIn(className)}

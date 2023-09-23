@@ -16,7 +16,7 @@ export default function Main() {
       canvas
       flexCenter
     >
-      <Box width="100%" color="#eee" paddingTop="2.25rem">
+      <Box width="100%" color="#eee">
         <Flex flexDirection={"column"} justifyContent="center">
           <hr
             style={{

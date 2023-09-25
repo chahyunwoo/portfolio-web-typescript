@@ -6,7 +6,7 @@ import { FaMobileAlt } from "react-icons/fa";
 import { GoLightBulb } from "react-icons/go";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
 
-import { Text, Grid, Box, Flex, Button, Link } from "@chakra-ui/react";
+import { Text, Grid, Box, Flex, Button } from "@chakra-ui/react";
 
 import picture from "../assets/images/chahyunwoo.png";
 
@@ -63,21 +63,23 @@ export default function About() {
             <PictureBox imageSrc={picture} imageAlt="Cha Hyunwoo" />
             <Box marginTop="1em">
               <KeyworldBox />
-              <Link href="https://github.com/chahyunwoo" isExternal>
-                <Button
-                  width="full"
-                  variant="outline"
-                  borderColor={"#04c2c9"}
-                  color="#04c2c9"
-                  alignItems={"center"}
-                  _hover={{
-                    bg: "#04c2c9",
-                    color: "white",
-                  }}
-                >
-                  <Text>VISIT TO GITHUB</Text>
-                </Button>
-              </Link>
+              <Button
+                width="full"
+                variant="outline"
+                borderColor={"#04c2c9"}
+                color="#04c2c9"
+                alignItems={"center"}
+                _hover={{
+                  bg: "#04c2c9",
+                  color: "white",
+                }}
+                as="a"
+                href="https://github.com/chahyunwoo"
+                target="_blank"
+                textDecoration="none"
+              >
+                <Text userSelect="none">VISIT TO GITHUB</Text>
+              </Button>
             </Box>
           </AboutLayout>
           <AboutLayout className="right">
@@ -103,7 +105,7 @@ export default function About() {
                 <IntroduceText
                   titleName="이메일"
                   titleContents="chahyunwoobi@gmail.com"
-                  letterSpacing={-0.1}
+                  letterSpacing={-0.7}
                 />
                 <IntroduceText titleName="학력" titleContents="숭실대학교" />
               </Flex>

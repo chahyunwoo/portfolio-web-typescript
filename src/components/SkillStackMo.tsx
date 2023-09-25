@@ -177,7 +177,13 @@ export default function SkillStackMo() {
       >
         <TabList marginBottom={8}>
           {tabKeys.map((tabkey, id) => (
-            <Tab key={id} isDisabled={disableTabs && tabIndex !== id}>
+            <Tab
+              key={id}
+              isDisabled={disableTabs && tabIndex !== id}
+              _selected={{ color: "#04c2c9" }}
+              color="#616161"
+              fontSize={["sm", "md", "md", "md"]}
+            >
               {tabkey}
             </Tab>
           ))}

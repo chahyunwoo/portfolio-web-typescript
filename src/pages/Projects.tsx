@@ -15,6 +15,7 @@ import project8 from "../assets/images/tasomcare850.png";
 import project9 from "../assets/images/todolist850.png";
 
 import styled, { keyframes, css } from "styled-components";
+import { throttle } from "lodash";
 
 interface ImageBoxProps {
   image: string;
@@ -217,39 +218,32 @@ export default function Projects() {
   let tY = tYRef.current;
   let timer = timerRef.current;
 
+  const easing = 0.5;
+
   const playSpin = (bool: boolean) => {
     setIsRunning(bool);
   };
 
-  const handleAnimate = () => {
-    desXRef.current = desXRef.current * 0.95;
-    desYRef.current = desYRef.current * 0.95;
-    tXRef.current = tXRef.current + desXRef.current * 0.1;
-    tYRef.current = tYRef.current + desYRef.current * 0.1;
-
-    if (Math.abs(desXRef.current) < 0.5 && Math.abs(desYRef.current) < 0.5) {
-      playSpin(true);
-      desXRef.current = 0;
-      desYRef.current = 0;
-    } else {
-      requestAnimationFrame(handleAnimate);
-    }
-  };
-
   const handleMouseDown = (e: any) => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+
     sXRef.current = e.clientX;
     sYRef.current = e.clientY;
     setDragging(true);
     e.preventDefault();
   };
 
-  const handleMouseMove = (e: any) => {
+  const handleMouseMove = throttle((e: any) => {
     if (dragging) {
       nXRef.current = e.clientX;
       nYRef.current = e.clientY;
 
-      desXRef.current = nXRef.current - sXRef.current;
-      desYRef.current = nYRef.current - sYRef.current;
+      desXRef.current +=
+        (nXRef.current - sXRef.current - desXRef.current) * easing;
+      desYRef.current +=
+        (nYRef.current - sYRef.current - desYRef.current) * easing;
 
       tXRef.current = tXRef.current + desXRef.current * 0.1;
       tYRef.current = tYRef.current + desYRef.current * 0.1;
@@ -259,7 +253,7 @@ export default function Projects() {
       sXRef.current = nXRef.current;
       sYRef.current = nYRef.current;
     }
-  };
+  }, 16);
 
   const handleMouseUp = () => {
     setDragging(false);
@@ -267,14 +261,23 @@ export default function Projects() {
     const dragDirectionValue = nXRef.current - sXRef.current > 0 ? 1 : -1;
     dragDirectionRef.current = dragDirectionValue;
 
-    desXRef.current = (nXRef.current - sXRef.current) * 0.1;
-    desYRef.current = (nYRef.current - sYRef.current) * 0.1;
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
 
-    handleAnimate();
-  };
+    timerRef.current = window.setInterval(() => {
+      desXRef.current = desXRef.current * easing;
+      desYRef.current = desYRef.current * easing;
+      tXRef.current = tXRef.current + desXRef.current * 0.1;
+      tYRef.current = tYRef.current + desYRef.current * 0.1;
 
-  const handleWheel = (e: any) => {
-    e.preventDefault();
+      if (Math.abs(desXRef.current) < 0.5 && Math.abs(desYRef.current) < 0.5) {
+        if (timerRef.current) {
+          clearInterval(timerRef.current);
+        }
+        playSpin(true);
+      }
+    }, 17);
   };
 
   useEffect(() => {
@@ -298,7 +301,6 @@ export default function Projects() {
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
-      onWheel={handleWheel}
     >
       <Drag ref={dragRef} tX={tX} tY={tY}>
         <Spin
@@ -327,3 +329,62 @@ export default function Projects() {
     </ProjectsContainer>
   );
 }
+
+// function applyTransform(obj) {
+//   if (tY > 180) tY = 180;
+//   if (tY < 0) tY = 0;
+
+//   obj.style.transform = `rotateX(${-tY})deg rotateY(${tX})deg`
+// }
+
+// function playSpin(bool) {
+//   ospin.style.animtionPlayState = bool ? 'running' : 'paused'
+// }
+
+// window.onpointerdown = function (e) {
+//   this.clearInterval(odrag.timer)
+
+//   e = e || this.window.event;
+
+//   sX = e.clientX,
+//   sY = e.clientY;
+
+// this.onpointermove = function (e) {
+//   e = e || window.event;
+
+//   nX = e.clientX;
+//   nY = e.clientY;
+
+//   desX = nX - sX;
+//   desY = nY - sY;
+//   tX += desX * 0.1;
+//   tY += desY * 0.1;
+
+//   applyTransform(odrag);
+
+//   sX = nX;
+//   sY = nY;
+// }
+
+// this.onpointerup = function (e) {
+//   odrag.timer = setInterval((function () {
+//     desX *= 0.95;
+//     desY *= 0.95;
+//     tX += desX * 0.1;
+//     tY += desY * 0.1;
+
+//     applyTransform(odrag);
+
+//     playSpin(false);
+
+//     if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+//       clearInterval(odrag.timer)
+//       playSpin(true)
+//     }
+//   }), 17)
+
+//   this.onpointermove = this.onpointerup = null
+// }
+
+// return false;
+// }

@@ -206,6 +206,7 @@ export default function Projects() {
 
   const [dragging, setDragging] = useState(false);
   const [isRunning, setIsRunning] = useState(true);
+  const [dragDirection, setDragDirection] = useState(1);
 
   const sXRef = useRef(0);
   const sYRef = useRef(0);
@@ -259,22 +260,24 @@ export default function Projects() {
         tXRef.current = tXRef.current + desXRef.current * 0.1;
         tYRef.current = tYRef.current + desYRef.current * 0.1;
 
+        const dragDirectionValue = nXRef.current - sXRef.current > 0 ? 1 : -1;
+        if (dragDirectionValue !== dragDirection) {
+          setDragDirection(dragDirectionValue);
+        }
+
         playSpin(false);
 
         sXRef.current = nXRef.current;
         sYRef.current = nYRef.current;
       }
     },
-    [dragging]
+    [dragging, dragDirection]
   );
 
   const handleMouseMove = throttle(handleMouseMoveCallback, 16);
 
   const handleMouseUp = useCallback(() => {
     setDragging(false);
-
-    const dragDirectionValue = nXRef.current - sXRef.current > 0 ? 1 : -1;
-    dragDirectionRef.current = dragDirectionValue;
 
     if (timerRef.current) {
       clearInterval(timerRef.current);
@@ -323,7 +326,7 @@ export default function Projects() {
           rotatespeed={rotateSpeed}
           $running={isRunning}
           $click={click}
-          dragDirection={dragDirectionRef.current}
+          dragDirection={dragDirection}
         >
           {items.map((item, index) => {
             return (

@@ -1,7 +1,14 @@
 import Layout from "../layouts/Layout";
 import SectionTitle from "../components/atoms/SectionTitle";
 import { Box } from "@chakra-ui/react";
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useCallback,
+  useMemo,
+  memo,
+} from "react";
 import { useDrag } from "react-use-gesture";
 
 import project1 from "../assets/images/accountnft850.png";
@@ -94,7 +101,7 @@ const Spin = styled.div<SpinProps>`
   animation-play-state: ${({ $running }) => ($running ? "running" : "paused")};
 `;
 
-const ImageBox = styled.div<ImageBoxProps>`
+const ImageBox = memo(styled.div<ImageBoxProps>`
   transform-style: preserve-3d;
   position: absolute;
   top: 0;
@@ -118,7 +125,7 @@ const ImageBox = styled.div<ImageBoxProps>`
     box-shadow: 0 0 15px #fffd;
     linear-gradient(transparent, transparent, #0007);
   }
-`;
+`);
 
 const MoreButton = styled.button`
   position: absolute;
@@ -178,17 +185,20 @@ export default function Projects() {
     }
   }, []);
 
+  const newTransforms = useMemo(() => {
+    return items.map(
+      (_, index) =>
+        `rotateY(${index * (360 / items.length)}deg) translateZ(${radius}px)`
+    );
+  }, [items]);
+
+  const newTransitionDelays = useMemo(() => {
+    return items.map((_, index) => (items.length - index) / 4);
+  }, [items]);
+
   const handleClick = () => {
     if (!click) {
       setClick(true);
-
-      const newTransforms = items.map(
-        (_, index) =>
-          `rotateY(${index * (360 / items.length)}deg) translateZ(${radius}px)`
-      );
-      const newTransitionDelays = items.map(
-        (_, index) => (items.length - index) / 4
-      );
       setTransforms(newTransforms);
       setTransitionDelays(newTransitionDelays);
     }
@@ -224,7 +234,7 @@ export default function Projects() {
     setIsRunning(bool);
   };
 
-  const handleMouseDown = (e: any) => {
+  const handleMouseDown = useCallback((e: any) => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
     }
@@ -233,29 +243,34 @@ export default function Projects() {
     sYRef.current = e.clientY;
     setDragging(true);
     e.preventDefault();
-  };
+  }, []);
 
-  const handleMouseMove = throttle((e: any) => {
-    if (dragging) {
-      nXRef.current = e.clientX;
-      nYRef.current = e.clientY;
+  const handleMouseMoveCallback = useCallback(
+    (e: any) => {
+      if (dragging) {
+        nXRef.current = e.clientX;
+        nYRef.current = e.clientY;
 
-      desXRef.current +=
-        (nXRef.current - sXRef.current - desXRef.current) * easing;
-      desYRef.current +=
-        (nYRef.current - sYRef.current - desYRef.current) * easing;
+        desXRef.current +=
+          (nXRef.current - sXRef.current - desXRef.current) * easing;
+        desYRef.current +=
+          (nYRef.current - sYRef.current - desYRef.current) * easing;
 
-      tXRef.current = tXRef.current + desXRef.current * 0.1;
-      tYRef.current = tYRef.current + desYRef.current * 0.1;
+        tXRef.current = tXRef.current + desXRef.current * 0.1;
+        tYRef.current = tYRef.current + desYRef.current * 0.1;
 
-      playSpin(false);
+        playSpin(false);
 
-      sXRef.current = nXRef.current;
-      sYRef.current = nYRef.current;
-    }
-  }, 16);
+        sXRef.current = nXRef.current;
+        sYRef.current = nYRef.current;
+      }
+    },
+    [dragging]
+  );
 
-  const handleMouseUp = () => {
+  const handleMouseMove = throttle(handleMouseMoveCallback, 16);
+
+  const handleMouseUp = useCallback(() => {
     setDragging(false);
 
     const dragDirectionValue = nXRef.current - sXRef.current > 0 ? 1 : -1;
@@ -278,7 +293,7 @@ export default function Projects() {
         playSpin(true);
       }
     }, 17);
-  };
+  }, []);
 
   useEffect(() => {
     if (dragging) {

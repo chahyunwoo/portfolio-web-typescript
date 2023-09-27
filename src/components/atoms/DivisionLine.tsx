@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 interface Props {
   direction: "left" | "right";
   isMobile: boolean;
+  isWhiteColor?: boolean;
 }
 
 const slideInDelay = (direction: "left" | "right") => ({
@@ -15,7 +16,11 @@ const slideInDelay = (direction: "left" | "right") => ({
   },
 });
 
-export default function DivisionLine({ direction, isMobile }: Props) {
+export default function DivisionLine({
+  direction,
+  isMobile,
+  isWhiteColor,
+}: Props) {
   return (
     <Box
       as={motion.span}
@@ -25,7 +30,7 @@ export default function DivisionLine({ direction, isMobile }: Props) {
       viewport={{ once: true, amount: 0.8 }}
       variants={slideInDelay(direction)}
       borderWidth="2px"
-      borderColor="#444649"
+      borderColor={isWhiteColor ? "#f2f2f2" : "#444649"}
       width="2.5em"
     />
   );

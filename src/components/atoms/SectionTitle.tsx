@@ -8,6 +8,7 @@ interface Props {
   children: React.ReactNode;
   direction: "left" | "right";
   absolute?: boolean;
+  isWhiteColor?: boolean;
 }
 
 const slideIn = (direction: "left" | "right") => ({
@@ -19,7 +20,12 @@ const slideIn = (direction: "left" | "right") => ({
   },
 });
 
-export default function SectionTitle({ children, direction, absolute }: Props) {
+export default function SectionTitle({
+  children,
+  direction,
+  absolute,
+  isWhiteColor = false,
+}: Props) {
   const isMobile = useMobileCheck();
 
   return (
@@ -48,7 +54,7 @@ export default function SectionTitle({ children, direction, absolute }: Props) {
         whileInView={isMobile ? "visible" : "visible"}
         viewport={{ once: true, amount: 0.8 }}
         variants={slideIn(direction)}
-        color={"#444649"}
+        color={isWhiteColor ? "#f2f2f2" : "#444649"}
         textAlign={"center"}
         marginBottom="0.2em"
         letterSpacing={-0.5}
@@ -56,7 +62,11 @@ export default function SectionTitle({ children, direction, absolute }: Props) {
       >
         {children}
       </Heading>
-      <DivisionLine direction={direction} isMobile={isMobile} />
+      <DivisionLine
+        direction={direction}
+        isMobile={isMobile}
+        isWhiteColor={isWhiteColor}
+      />
     </VStack>
   );
 }

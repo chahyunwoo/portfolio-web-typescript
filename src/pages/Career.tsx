@@ -24,7 +24,12 @@ import { MdCheck } from "react-icons/md";
 import { motion, Variants } from "framer-motion";
 
 export default function Career() {
-  const { animation, animationRef } = useScrollAnimation();
+  const { animation: animation1, animationRef: animationRef1 } =
+    useScrollAnimation();
+  const { animation: animation2, animationRef: animationRef2 } =
+    useScrollAnimation();
+  const { animation: animation3, animationRef: animationRef3 } =
+    useScrollAnimation();
 
   const fadeIn: Variants = {
     hidden: { opacity: 0 },
@@ -41,13 +46,17 @@ export default function Career() {
         w="full"
         flexDir={"column"}
         gap={20}
-        as={motion.div}
-        ref={animationRef}
-        initial="hidden"
-        animate={animation}
-        variants={fadeIn}
       >
-        <Flex flexWrap={"wrap"} w="full" justifyContent={"center"}>
+        <Flex
+          flexWrap={"wrap"}
+          w="full"
+          justifyContent={"center"}
+          as={motion.div}
+          ref={animationRef1}
+          initial="hidden"
+          animate={animation1}
+          variants={fadeIn}
+        >
           <Box
             w={{ base: "100%", md: "30%" }}
             display="flex"
@@ -166,7 +175,16 @@ export default function Career() {
           </Box>
         </Flex>
 
-        <Flex flexWrap={"wrap"} w="full" justifyContent={"center"}>
+        <Flex
+          flexWrap={"wrap"}
+          w="full"
+          justifyContent={"center"}
+          as={motion.div}
+          ref={animationRef2}
+          initial="hidden"
+          animate={animation2}
+          variants={fadeIn}
+        >
           <Box
             w={{ base: "100%", md: "30%" }}
             display="flex"
@@ -397,7 +415,16 @@ export default function Career() {
           </Box>
         </Flex>
 
-        <Flex flexWrap={"wrap"} w="full" justifyContent={"center"}>
+        <Flex
+          flexWrap={"wrap"}
+          w="full"
+          justifyContent={"center"}
+          as={motion.div}
+          ref={animationRef3}
+          initial="hidden"
+          animate={animation3}
+          variants={fadeIn}
+        >
           <Box
             w={{ base: "100%", md: "30%" }}
             display="flex"

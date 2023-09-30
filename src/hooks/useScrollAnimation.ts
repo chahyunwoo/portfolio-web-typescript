@@ -1,7 +1,6 @@
 // hooks/useScrollAnimation.ts
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useAnimation } from "framer-motion";
-
 import throttle from "lodash/throttle";
 
 export const useScrollAnimation = () => {

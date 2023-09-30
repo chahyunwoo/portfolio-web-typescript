@@ -46,7 +46,7 @@ export const Drag = styled.div<DragProps>`
   min-height: 1000px;
   transform-style: preserve-3d;
   transform: ${({ tX, tY }) =>
-    `rotateX(${tY > 40 ? -40 : tY < 0 ? 0 : -tY}deg) rotateY(${tX}deg)`};
+    `rotateX(${tY > 10 ? -10 : tY < 0 ? 0 : -tY}deg) rotateY(${tX}deg)`};
   transition: all 1s;
 `;
 

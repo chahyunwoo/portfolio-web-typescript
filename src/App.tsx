@@ -12,6 +12,7 @@ import Main from "./pages/Main";
 import { useEffect, useState } from "react";
 
 import theme from "./styles/theme";
+import Contact from "./pages/Contact";
 
 function App() {
   const [scrollPos, setScrollPos] = useState(0);
@@ -37,6 +38,7 @@ function App() {
         <Skills />
         <Projects />
         <Career />
+        <Contact />
         <Footer />
         {<ScrollToTopButton scrollPos={scrollPos} />}
       </div>

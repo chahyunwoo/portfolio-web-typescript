@@ -4,7 +4,6 @@ import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import About from "./pages/About";
 import Career from "./pages/Career";
-import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import ScrollToTopButton from "./components/common/ScrollToTopButton";
@@ -38,7 +37,6 @@ function App() {
         <Skills />
         <Projects />
         <Career />
-        <Contact />
         <Footer />
         {<ScrollToTopButton scrollPos={scrollPos} />}
       </div>

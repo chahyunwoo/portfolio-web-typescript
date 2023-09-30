@@ -6,7 +6,7 @@ import SkillStackMo from "../components/SkillStackMo";
 export default function Skills() {
   return (
     <Layout
-      backgroundColor="#ffffff"
+      backgroundColor="#fff"
       id="skills"
       height={{ base: "auto", lg: "calc(100vh - 4.5rem)" }}
     >

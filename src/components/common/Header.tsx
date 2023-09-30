@@ -20,7 +20,7 @@ interface Props {
   isOpen: boolean;
 }
 
-const Links = ["About", "Skills", "Projects", "Career", "Contact"];
+const Links = ["About", "Skills", "Projects", "Career"];
 
 const styles = {
   navLink: (scrolled: boolean, isOpen: boolean) => ({

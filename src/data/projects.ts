@@ -62,7 +62,7 @@ export const PROJECTS = [
   {
     stack: "frontend",
     name: "Pupping",
-    classname: "pupping",
+    className: "pupping",
     image: puppingImage,
     skills: ["React"],
     description:

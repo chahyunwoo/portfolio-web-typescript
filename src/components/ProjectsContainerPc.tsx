@@ -170,6 +170,7 @@ export default function ProjectsContainerPc() {
                   initial="visible"
                   exit="exit"
                   variants={fadeOut}
+                  zIndex={99}
                 >
                   <Box
                     color="white"

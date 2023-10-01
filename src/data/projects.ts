@@ -57,7 +57,7 @@ export const PROJECTS = [
     skills: ["React", "TypeScript"],
     description:
       "현재 보고계신 포트폴리오 페이지입니다.\n기존 React로만 개발되었던 페이지를 안정성을 높이기 위해 정적 타입을 사용하여 고도화 작업을 했으며, Chakra UI와 Styled-components를 사용하여 UI를 구성했습니다.\n다양한 애니메이션 효과 및 3D 효과를 구현하였으며, 애니메이션 효과를 주기 위해 framer-motion 라이브러리를 사용했습니다.",
-    url: "#",
+    url: "https://chahyunwoobi.com",
   },
   {
     stack: "bussiness",

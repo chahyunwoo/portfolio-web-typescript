@@ -10,7 +10,7 @@
 
 
 ## STACK
-| Next.js | TypeScript | Chakra UI | Styled-component |
+| React.js | TypeScript | Chakra UI | Styled-component |
 |:-:|:-:|:-:|:-:|
 
 ## LIBRARY

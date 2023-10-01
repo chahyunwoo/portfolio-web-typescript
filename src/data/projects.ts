@@ -76,7 +76,7 @@ export const PROJECTS = [
     image: saltAewol,
     skills: ["React"],
     description:
-      "개인 포트폴리오로 사용하기 위해 제작한 Salt Aewol의 홈페이지입니다.\n깔끔하고 청량한 이미지를 주기 위해 화이트와 블루 계열의 톤으로 UI/UX 디자인부터 진행했습니다.\nFlickr와 Youtube API를 사용해 갤러리와 유튜브 재생목록을 추가했습니다.\n캐싱처리를 통해 페이지를 최적화시켰습니다.",
+      "개인 포트폴리오로 사용하기 위해 제작한 Salt Aewol의 홈페이지입니다.\n깔끔하고 청량한 이미지를 주기 위해 화이트와 블루 계열의 톤으로 UI/UX 디자인부터 진행했습니다.\nFlickr와 Youtube API를 사용해 갤러리와 유튜브 재생목록을 추가했습니다.\n전역 상태관리를 위해 redux-saga를 사용하고, 캐싱처리를 통해 페이지를 최적화했습니다.",
     url: "https://chahyunwoo.github.io/portfolio-bussiness-react",
   },
   {
@@ -96,7 +96,7 @@ export const PROJECTS = [
     image: todolist,
     skills: ["React", "TypeScript"],
     description:
-      "개인 포트폴리오 용도로 사용하기 위해 제작한 페이지입니다.\nReact, Typescript를 사용하여 제작한 페이지이며 local Storage 기능을 이용하여 사용자의 데이터를 저장했습니다.\nWeather API를 사용하여 사용자의 위치를 추적해 실시간으로 날씨를 보여주는 작업과 OpenAI API를 사용하여 인공지능 AI와 채팅을 할 수 있는 기능을 개발하고 Vercel을 통해 배포했습니다.",
+      "개인 포트폴리오 용도로 사용하기 위해 제작한 페이지입니다.\nReact, Typescript를 사용하여 제작한 페이지이며 local Storage 기능을 이용하여 사용자의 데이터를 저장했습니다.\nWeather API를 사용하여 사용자의 위치를 추적해 실시간으로 날씨를 보여주는 작업과 OpenAI API를 사용하여 인공지능 AI와 채팅을 할 수 있는 기능을 개발하고 Vercel을 통해 배포했습니다.\n전역 상태관리를 위해 redux-toolkit을 사용했습니다.",
     url: "https://todolist-web-typescript.vercel.app/",
   },
 ];

@@ -97,6 +97,6 @@ export const PROJECTS = [
     skills: ["React", "TypeScript"],
     description:
       "개인 포트폴리오 용도로 사용하기 위해 제작한 페이지입니다.\nReact, Typescript를 사용하여 제작한 페이지이며 local Storage 기능을 이용하여 사용자의 데이터를 저장했습니다.\nWeather API를 사용하여 사용자의 위치를 추적해 실시간으로 날씨를 보여주는 작업과 OpenAI API를 사용하여 인공지능 AI와 채팅을 할 수 있는 기능을 개발하고 Vercel을 통해 배포했습니다.\n전역 상태관리를 위해 redux-toolkit을 사용했습니다.",
-    url: "https://todolist-web-typescript.vercel.app/",
+    url: "https://todolist-web-typescript.vercel.app",
   },
 ];

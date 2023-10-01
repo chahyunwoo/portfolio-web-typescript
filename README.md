@@ -7,6 +7,8 @@
 🟢 재사용성을 위한 컴포넌트 분리
 
 ## STACK
-| React.js | TypeScript
+|:-:|:-:|:-:|:-:|
+| Next.js | TypeScript | Chakra UI | Styled-component |
+|:-:|:-:|:-:|:-:|
 
 ## LIBRARY

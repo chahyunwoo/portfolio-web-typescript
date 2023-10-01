@@ -2,7 +2,7 @@ import { Tabs, TabList, Tab } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
-interface ProjectsTabProps {
+interface SkillsTabProps {
   handleTabChange: (tab: string) => void;
 }
 
@@ -11,13 +11,12 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function ProjectsTab({ handleTabChange }: ProjectsTabProps) {
+export default function SkillsTab({ handleTabChange }: SkillsTabProps) {
   const { animation, animationRef } = useScrollAnimation<HTMLUListElement>();
 
   return (
     <Tabs
       className="tabs"
-      px={["2rem", "2rem", 0, 0]}
       m="4em 0 2em 0"
       isFitted
       as={motion.ul}
@@ -28,25 +27,25 @@ export default function ProjectsTab({ handleTabChange }: ProjectsTabProps) {
     >
       <TabList color="#616161">
         <Tab
-          onClick={() => handleTabChange("all")}
+          onClick={() => handleTabChange("frontend")}
           _selected={{ color: "#04c2c9", borderBottomColor: "#04c2c9" }}
           fontSize={["sm", "md", "md", "md"]}
         >
-          All
+          Frontend
         </Tab>
         <Tab
-          onClick={() => handleTabChange("bussiness")}
+          onClick={() => handleTabChange("mobile")}
           _selected={{ color: "#04c2c9", borderBottomColor: "#04c2c9" }}
           fontSize={["sm", "md", "md", "md"]}
         >
-          Business
+          Mobile
         </Tab>
         <Tab
-          onClick={() => handleTabChange("personal")}
+          onClick={() => handleTabChange("etc")}
           _selected={{ color: "#04c2c9", borderBottomColor: "#04c2c9" }}
           fontSize={["sm", "md", "md", "md"]}
         >
-          Personal
+          ETC
         </Tab>
       </TabList>
     </Tabs>

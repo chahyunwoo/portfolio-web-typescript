@@ -65,20 +65,17 @@ const styles = {
 const NavLink = ({ children, to, scrolled, isOpen }: Props) => {
   return (
     <Box
-      as="a"
+      as={Link}
       {...styles.navLink(scrolled, isOpen)}
       onClick={(e) => e.preventDefault()}
+      to={to}
+      smooth={true}
+      duration={500}
+      spy={true}
+      activeClass="active"
+      offset={-72}
     >
-      <Link
-        to={to}
-        smooth={true}
-        duration={500}
-        spy={true}
-        activeClass="active"
-        offset={-72}
-      >
-        {children}
-      </Link>
+      {children}
     </Box>
   );
 };

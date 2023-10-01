@@ -35,9 +35,9 @@ export default function Canvas() {
     height: window.innerHeight,
   });
 
-  const createLines = (): any[] => {
+  const createLines = (): LineType[] => {
     const numLines = determineNumLines(window.innerWidth);
-    const newLines: any[] = [];
+    const newLines: LineType[] = [];
     const colors = ["#FF5733", "#33FF57", "#fbc531", "#FF33A6", "#33A6FF"];
 
     const diagonal = Math.sqrt(

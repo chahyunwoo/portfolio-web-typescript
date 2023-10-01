@@ -1,4 +1,4 @@
-export interface Skill {
+export interface SkillDataType {
   stack: string;
   name: string;
   value: number;
@@ -6,7 +6,7 @@ export interface Skill {
   content: string;
 }
 
-export type SkillSet = [string, Skill[], string];
+export type SkillSet = [string, SkillDataType[], string];
 
 export interface OpenModalDataProps {
   stack: string;
@@ -15,11 +15,9 @@ export interface OpenModalDataProps {
 }
 
 export interface ProgressCircleProps {
-  activeModal: boolean;
-  activeStack: {
-    frontend: boolean;
-    mobile: boolean;
-    etc: boolean;
+  activemodal: string;
+  activestack: {
+    [key: string]: boolean;
   };
 }
 

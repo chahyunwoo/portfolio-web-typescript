@@ -3,9 +3,9 @@ import { useEffect, useState, useRef } from "react";
 import { useAnimation } from "framer-motion";
 import throttle from "lodash/throttle";
 
-export const useScrollAnimation = () => {
+export const useScrollAnimation = <T extends HTMLElement>() => {
   const controls = useAnimation();
-  const animationRef = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<T | null>(null);
   const [animationState, setAnimationState] = useState<string>("hidden");
 
   useEffect(() => {

@@ -1,15 +1,14 @@
 import Layout from "../layouts/Layout";
 import SectionTitle from "../components/atoms/SectionTitle";
-import { Box } from "@chakra-ui/layout";
 import { useState } from "react";
 import ProjectsTab from "../components/ProjectsTab";
-import ProjectList from "../components/ProjectsList";
+import ProjectsList from "../components/ProjectsList";
 import { PROJECTS } from "../data/projects";
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("all");
 
-  const handleTabChange = (tab: any) => {
+  const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
 
@@ -18,10 +17,8 @@ export default function Projects() {
   return (
     <Layout backgroundColor="#f5f5f5" id="projects" deletePx={true}>
       <SectionTitle direction="left">PROJECTS</SectionTitle>
-      <Box>
-        <ProjectsTab activeTab={activeTab} handleTabChange={handleTabChange} />
-        <ProjectList projects={filteredProjects} activeTab={activeTab} />
-      </Box>
+      <ProjectsTab handleTabChange={handleTabChange} />
+      <ProjectsList projects={filteredProjects} activeTab={activeTab} />
     </Layout>
   );
 }

@@ -25,64 +25,30 @@ export const Card = styled.div`
 
 export const FlexBox = styled(Flex)<ProgressCircleProps>`
   .frontend {
-    left: ${({ activeStack }) => (activeStack.frontend ? "55%" : "5%")};
-    top: ${({ activeStack }) => (activeStack.frontend ? "50%" : "20%")};
+    left: ${({ activestack }) => (activestack.frontend ? "55%" : "5%")};
+    top: ${({ activestack }) => (activestack.frontend ? "50%" : "20%")};
   }
   .mobile {
-    left: ${({ activeStack }) => (activeStack.mobile ? "55%" : "5%")};
-    top: ${({ activeStack }) => (activeStack.mobile ? "50%" : "50%")};
+    left: ${({ activestack }) => (activestack.mobile ? "55%" : "5%")};
+    top: ${({ activestack }) => (activestack.mobile ? "50%" : "50%")};
   }
   .etc {
-    left: ${({ activeStack }) => (activeStack.etc ? "55%" : "5%")};
-    top: ${({ activeStack }) => (activeStack.etc ? "50%" : "80%")};
+    left: ${({ activestack }) => (activestack.etc ? "55%" : "5%")};
+    top: ${({ activestack }) => (activestack.etc ? "50%" : "80%")};
   }
-  .stack-circle {
-    background-color: white;
-    position: absolute;
-    top: 12%;
-    left: 12%;
-    z-index: 10;
-    cursor: pointer;
-    border-radius: 50%;
-  }
+
   .modal {
-    display: ${({ activeModal }) => (activeModal ? "" : "none")};
+    display: ${({ activemodal }) => (activemodal ? "" : "none")};
     position: absolute;
     width: 200px;
     height: 150px;
-
     left: 50%;
     top: 50%;
     transform: translate(-17%, -10%);
-
     background-color: white;
     border-radius: 8px;
     box-shadow: rgba(149, 160, 165, 0.2) 0px 8px 24px;
-
     z-index: 10;
-  }
-  .modal-name {
-    width: fit-content;
-    background-color: #eaeaeaaf;
-    border-radius: 12px;
-    margin: 0 1rem;
-    padding: 0.2rem 0.5rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-  .modal-content {
-    margin: 1rem 1.5rem;
-    word-break: keep-all;
-    line-height: 1.3rem;
-    font-size: 0.9rem;
-  }
-  .skills {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    cursor: pointer;
   }
 `;
 
@@ -103,18 +69,6 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 export const ProgressBox = styled(Box)`
   position: relative;
-
-  .progress-wrap {
-    transform: rotate(-90deg);
-  }
-  .skillname {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    transform: rotate(90deg);
-  }
 `;
 
 export const SkillProgress = styled.svg<ProgressProps>`

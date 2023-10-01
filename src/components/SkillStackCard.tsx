@@ -1,10 +1,16 @@
 import { Box, Text } from "@chakra-ui/react";
 import { ProgressBox, SkillProgress, RADIUS } from "../styles/skillsStyles";
 
-const SkillStackCard = ({ value, name, open }: any) => {
+interface SkillStackCardType {
+  name?: string;
+  value: number;
+  open: boolean;
+}
+
+const SkillStackCard = ({ value, name, open }: SkillStackCardType) => {
   return (
     <ProgressBox>
-      <Box className="progress-wrap" width="120px" height="120px">
+      <Box width="120px" height="120px" transform="rotate(-90deg)">
         <SkillProgress value={value} name={name} open={open}>
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -29,10 +35,15 @@ const SkillStackCard = ({ value, name, open }: any) => {
           />
         </SkillProgress>
         <Text
-          className="skillname"
           textAlign={"center"}
           lineHeight="120px"
           color="#616161"
+          position="absolute"
+          left="0"
+          right="0"
+          bottom="0"
+          top="0"
+          transform="rotate(90deg)"
         >
           {name}
         </Text>

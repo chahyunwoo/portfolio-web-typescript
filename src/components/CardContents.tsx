@@ -24,7 +24,7 @@ const fadeIn = (delay: number) => ({
 });
 
 export default function CardContents({ title, desc, delay }: Props) {
-  const { animation, animationRef } = useScrollAnimation();
+  const { animation, animationRef } = useScrollAnimation<HTMLDivElement>();
 
   return (
     <motion.div

@@ -1,6 +1,6 @@
 import Layout from "../layouts/Layout";
 import SectionTitle from "../components/atoms/SectionTitle";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Input, Box, Textarea, Button, useToast, Text } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
@@ -34,9 +34,9 @@ export default function Contact() {
   const [canSubmit, setCanSubmit] = useState(true);
 
   const { animation: animation1, animationRef: animationRef1 } =
-    useScrollAnimation();
+    useScrollAnimation<HTMLParagraphElement>();
   const { animation: animation2, animationRef: animationRef2 } =
-    useScrollAnimation();
+    useScrollAnimation<HTMLFormElement>();
 
   useEffect(() => {
     if (lastSubmitted !== null) {
@@ -51,7 +51,9 @@ export default function Contact() {
 
   const toast = useToast();
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -59,7 +61,7 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!canSubmit) {

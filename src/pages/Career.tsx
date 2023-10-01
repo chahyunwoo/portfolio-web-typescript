@@ -25,11 +25,11 @@ import { motion, Variants } from "framer-motion";
 
 export default function Career() {
   const { animation: animation1, animationRef: animationRef1 } =
-    useScrollAnimation();
+    useScrollAnimation<HTMLDivElement>();
   const { animation: animation2, animationRef: animationRef2 } =
-    useScrollAnimation();
+    useScrollAnimation<HTMLDivElement>();
   const { animation: animation3, animationRef: animationRef3 } =
-    useScrollAnimation();
+    useScrollAnimation<HTMLDivElement>();
 
   const fadeIn: Variants = {
     hidden: { opacity: 0 },

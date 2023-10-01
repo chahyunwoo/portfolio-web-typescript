@@ -14,7 +14,7 @@ const slideIn = (direction: string) => ({
 });
 
 export default function AboutLayout({ children, className }: Props) {
-  const { animation, animationRef } = useScrollAnimation();
+  const { animation, animationRef } = useScrollAnimation<HTMLDivElement>();
 
   return (
     <Box

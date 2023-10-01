@@ -1,6 +1,6 @@
 .active {
-  color: #de372a;
-  transition: all 0.5s;
+  color: #de372a !important;
+  transition: all 0.5s !important;
 }
 
 .bg-html {

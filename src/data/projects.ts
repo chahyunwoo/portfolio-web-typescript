@@ -7,6 +7,7 @@ import pupping from "../assets/images/pupping.png";
 import saltAewol from "../assets/images/saltaewol.png";
 import tasomcare from "../assets/images/tasomcare.png";
 import todolist from "../assets/images/todolist.png";
+import gram from "../assets/images/gram.png";
 
 export const PROJECTS = [
   {
@@ -98,5 +99,15 @@ export const PROJECTS = [
     description:
       "개인 포트폴리오 용도로 사용하기 위해 제작한 페이지입니다.\nReact, Typescript를 사용하여 제작한 페이지이며 local Storage 기능을 이용하여 사용자의 데이터를 저장했습니다.\nWeather API를 사용하여 사용자의 위치를 추적해 실시간으로 날씨를 보여주는 작업과 OpenAI API를 사용하여 인공지능 AI와 채팅을 할 수 있는 기능을 개발하고 Vercel을 통해 배포했습니다.\n전역 상태관리를 위해 redux-toolkit을 사용했습니다.",
     url: "https://todolist-web-typescript.vercel.app/",
+  },
+  {
+    stack: "personal",
+    name: "GRAM",
+    className: "gram",
+    image: gram,
+    skills: ["Next.js", "TypeScript"],
+    description:
+      "개인 프로젝트로 인스타그램 클론코딩을 했습니다.\nNext 13버전을 이용해 최신 업데이트를 반영하여 제작하였으며, vercel에서 만든 SWR을 사용하여 데이터 페칭 작업을 했습니다.\nHeadless CMS인 Sanity를 사용하여 좋아요, 코멘트, 팔로잉, 포스팅 등 다양한 기능과, Next-Auth를 사용하여 OAuth 로그인 처리를 구현하였습니다,\n미들웨어를 사용하여 안정성을 높였습니다.",
+    url: "https://nextjs-instagram-chw.vercel.app/",
   },
 ];

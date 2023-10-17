@@ -8,6 +8,7 @@ import saltAewol from "../assets/images/saltaewol.png";
 import tasomcare from "../assets/images/tasomcare.png";
 import todolist from "../assets/images/todolist.png";
 import gram from "../assets/images/gram.png";
+import blog from "../assets/images/blog.png";
 
 export const PROJECTS = [
   {
@@ -109,5 +110,15 @@ export const PROJECTS = [
     description:
       "개인 프로젝트로 인스타그램 클론코딩을 했습니다.\nNext 13버전을 이용해 최신 업데이트를 반영하여 제작하였으며, vercel에서 만든 SWR을 사용하여 데이터 페칭 작업을 했습니다.\nHeadless CMS인 Sanity를 사용하여 좋아요, 코멘트, 팔로잉, 포스팅 등 다양한 기능과, Next-Auth를 사용하여 OAuth 로그인 처리를 구현하였습니다,\n미들웨어를 사용하여 안정성을 높였습니다.",
     url: "https://nextjs-instagram-chw.vercel.app/",
+  },
+  {
+    stack: "personal",
+    name: "BLOG",
+    className: "blog",
+    image: blog,
+    skills: ["Next.js", "TypeScript"],
+    description:
+      "기술 및 일상을 공유하기 위해 Next 13을 이용해 블로그를 제작했습니다.\nSWR과 axios를 사용하여 데이터를 페칭하였고, contentlayer를 사용해 mdx 파일로 포스트를 작성하고 업로드하고 있습니다.\n오픈 소스 db 플랫폼인 supabase를 사용하여 방명록 작성 기능을 구현하였고, tailwind로 다크모드, 라이트모드 테마 변경이 가능한 반응형 웹페이지입니다.",
+    url: "https://chahyunwoo.dev",
   },
 ];

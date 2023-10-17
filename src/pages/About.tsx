@@ -63,23 +63,42 @@ export default function About() {
             <PictureBox imageSrc={picture} imageAlt="Cha Hyunwoo" />
             <Box marginTop="1em">
               <KeyworldBox />
-              <Button
-                width="full"
-                variant="outline"
-                borderColor={"#04c2c9"}
-                color="#04c2c9"
-                alignItems={"center"}
-                _hover={{
-                  bg: "#04c2c9",
-                  color: "white",
-                }}
-                as="a"
-                href="https://github.com/chahyunwoo"
-                target="_blank"
-                textDecoration="none"
-              >
-                <Text userSelect="none">VISIT TO GITHUB</Text>
-              </Button>
+              <Flex gap={4}>
+                <Button
+                  width="full"
+                  variant="outline"
+                  borderColor={"#04c2c9"}
+                  color="#04c2c9"
+                  alignItems={"center"}
+                  _hover={{
+                    bg: "#04c2c9",
+                    color: "white",
+                  }}
+                  as="a"
+                  href="https://github.com/chahyunwoo"
+                  target="_blank"
+                  textDecoration="none"
+                >
+                  <Text userSelect="none">GITHUB</Text>
+                </Button>
+                <Button
+                  width="full"
+                  variant="outline"
+                  borderColor={"#04c2c9"}
+                  color="#04c2c9"
+                  alignItems={"center"}
+                  _hover={{
+                    bg: "#04c2c9",
+                    color: "white",
+                  }}
+                  as="a"
+                  href="https://chahyunwoo.dev"
+                  target="_blank"
+                  textDecoration="none"
+                >
+                  <Text userSelect="none">BLOG</Text>
+                </Button>
+              </Flex>
             </Box>
           </AboutLayout>
           <AboutLayout className="right">

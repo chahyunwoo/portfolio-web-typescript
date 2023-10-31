@@ -109,7 +109,7 @@ export const PROJECTS = [
     skills: ["Next.js", "TypeScript"],
     description:
       "개인 프로젝트로 인스타그램 클론코딩을 했습니다.\nNext 13버전을 이용해 최신 업데이트를 반영하여 제작하였으며, vercel에서 만든 SWR을 사용하여 데이터 페칭 작업을 했습니다.\nHeadless CMS인 Sanity를 사용하여 좋아요, 코멘트, 팔로잉, 포스팅 등 다양한 기능과, Next-Auth를 사용하여 OAuth 로그인 처리를 구현하였습니다,\n미들웨어를 사용하여 안정성을 높였습니다.",
-    url: "https://nextjs-instagram-chw.vercel.app/",
+    url: "https://nextjs-instagram-flax.vercel.app/",
   },
   {
     stack: "personal",

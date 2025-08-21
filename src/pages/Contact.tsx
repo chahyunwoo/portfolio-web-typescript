@@ -92,7 +92,7 @@ export default function Contact() {
       )
       .then(
         (response) => {
-          console.log("SUCCESS!!", response.status, response.text);
+          console.log("SUCCESS!!!", response.status, response.text);
           toast({
             title: "성공",
             description: "전송되었습니다.",

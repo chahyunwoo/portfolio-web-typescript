@@ -20,7 +20,7 @@ export default function Footer() {
                 marginRight={5}
               />
             </Link>
-            <Link href="https://instagram.com/aavecvous" isExternal>
+            <Link href="https://instagram.com/chwzp" isExternal>
               <Icon
                 as={FaInstagram}
                 color="white"

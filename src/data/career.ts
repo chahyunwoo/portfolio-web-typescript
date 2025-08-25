@@ -1,11 +1,45 @@
 import TwinLogo from "../assets/images/twinlogo.png";
 import RncLogo from "../assets/images/rnclogo.png";
 import OmetaLogo from "../assets/images/ometalogo.jpeg";
+import ChahyunwooLogo from "../assets/images/chahyunwoologo.png";
 
 export const CAREER = [
   {
+    name: "Freelancer",
+    duration: "2025.05 - 현재",
+    logo: ChahyunwooLogo,
+    description: "2025년 5월 이후로 현재 프론트엔드 개발자 프리랜서로 활동 중입니다.",
+    project: [
+      {projectTitle: "서비스 내 사용 가이드 적용",
+        projectDesc: [
+          "Next.js 기반의 모노레포 프로젝트에서 신규 기능 추가",
+          "React-Joyride를 활용한 서비스 내 사용 가이드 적용",
+        ],
+      },
+      {
+        projectTitle: "금융권 백오피스 시스템 개발",
+        projectDesc: [
+          "React 19, Typescript, Styled-component를 사용하여 금융권 백오피스 시스템 개발",
+          "React-Query를 활용한 데이터 관리 및 캐싱 적용",
+          "Zustand를 활용한 상태 관리 및 데이터 흐름 관리",
+          "React-Hook-Form을 활용한 폼 관리 및 유효성 검사",
+          "프론트엔드 개발 PL로서 팀원들과의 커뮤니케이션 및 프로젝트 관리",
+        ],
+      },
+      {
+        projectTitle: "대기업 전기차 충전 플랫폼 개발",
+        projectDesc: [
+          "React 환경에서 디자인 시스템 및 공통 컴포넌트 개발",
+          "대기업 프로젝트로 복잡한 프로젝트 관리 경험 및 협업",
+          "Storybook을 활용한 컴포넌트 라이브러리 개발 및 관리",
+          "페이지 단위의 컴포넌트 테스트 코드 작성 및 리팩토링"
+        ]
+      }
+    ],
+  },
+  {
     name: "(주) 티윈",
-    duration: "2023.02 - 현재",
+    duration: "2023.02 - 2025.04",
     logo: TwinLogo,
     description:
       "LG전자의 협력사로 LG 마곡 사이언스파크에서 파견직으로 근무 중이며, 현재 부팀장의 직책으로 업무를 수행 중에 있습니다.",
@@ -18,6 +52,15 @@ export const CAREER = [
           "대기업의 업무 프로세스를 이해하며, 형상관리, 코드리뷰 등 직접적인 소통을 통해 업무 진행",
         ],
       },
+      {
+        projectTitle: "LG webOS App Shoptime 2.0",
+        projectDesc: [
+          "아키텍처 설계부터 프로덕션 출시까지 프론트엔드 개발 리드로서 기술 스택 선정 및 개발 프로세스 구축",
+          "Redux 에코시스템(redux-thunk, redux-saga)을 활용한 확장 가능한 상태 관리 아키텍처 설계",
+          "다국어 지원(미국, 독일, 러시아, 영국) 시스템 개선 및 i18n 프레임워크 통합 관리",
+          "신규 결제 시스템 연동 및 PG사 API 통합으로 결제 전환율 향상",
+        ]
+      }
     ],
   },
   {

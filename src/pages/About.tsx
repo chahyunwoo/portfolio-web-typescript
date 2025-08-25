@@ -113,7 +113,7 @@ export default function About() {
               <Flex direction={{ base: "row", lg: "column" }} wrap="wrap">
                 <IntroduceText
                   titleName="주소지"
-                  titleContents="서울특별시 강서구"
+                  titleContents="인천광역시 서구"
                 />
                 <IntroduceText
                   titleName="연락처"
